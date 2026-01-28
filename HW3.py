@@ -1,12 +1,8 @@
-# Name:
-# Student ID:
-# Email:
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
-# If you worked with generative AI also add a statement for how you used it.
-# e.g.:
-# Asked ChatGPT hints for debugging and suggesting the general structure of the code
-# Did your use of GenAI on this assignment align with your goals and guidelines in 
-#    your Gen AI contract? If not, why?
+# Name: Ryan Brenner
+# Student ID: 72370621
+# Email: ryanbren@umich.edu
+# I worked independently on this project but used ChatGPT to help me debug and get the file directory right. I.e. when I had a terminal
+# error I pasted it into ChatGPT and asked it to help me solve the problem.
 
 import random
 import io
