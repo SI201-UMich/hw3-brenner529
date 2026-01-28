@@ -2,7 +2,8 @@
 # Student ID: 72370621
 # Email: ryanbren@umich.edu
 # I worked independently on this project but used ChatGPT to help me debug and get the file directory right. I.e. when I had a terminal
-# error I pasted it into ChatGPT and asked it to help me solve the problem.
+# error I pasted it into ChatGPT and asked it to help me solve the problem. When I was having trouble with a function I asked it 
+# to explain the errors to me in plain English so I could find and correct them
 
 import random
 import io
@@ -10,26 +11,11 @@ from contextlib import redirect_stdout
 
 
 class CouponDispenser:
-    """
-    CouponDispenser manages a box of coupon cards and assigns one coupon
-    to each unique name entered by the user during a session.
-
-    Required attributes (initialized in __init__):
-      - coupon_cards: list[str]              # all possible coupon texts
-      - customer_roster: list[str]             # names in order of assignment
-      - issued_indices: list[int]           # indices into coupon_cards aligned to customer_roster
-
-    """
-
+   
     def __init__(self, coupon_cards):
-        """
-        Initialize a new CouponDispenser object.
-
-        Args:
-            coupon_cards (list[str]): list of possible coupons users can receive.
-        """
-        # TODO: Implement per instructions
-        pass
+       self.coupon_cards = coupon_cards
+       self.customer_roster = []
+       self.issued_indices = []
 
     def __str__(self):
         """
@@ -39,8 +25,14 @@ class CouponDispenser:
         Returns:
             str
         """
-        # TODO: Implement per instructions
-        pass
+        if len(self.coupon_cards) == 0:
+            return ""
+        else:
+            coupons_string = ""
+            for item in self.coupon_cards:
+                coupons_string += item + "|"
+            coupons_string = coupons_string[:-1]
+            return coupons_string
 
     def issue_coupon(self, name):
         """
