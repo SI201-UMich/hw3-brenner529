@@ -54,7 +54,7 @@ class CouponDispenser:
         for guy in range(len(self.customer_roster)):
             if self.customer_roster[guy] == name:
                 coupon_num = self.issued_indices[guy]
-                return self.coupon_cards[coupon_num]
+                return "That name already has a coupon: " + self.coupon_cards[coupon_num]
             
         
         coupon_num = random.randint(0, len(self.coupon_cards)-1)
@@ -80,6 +80,8 @@ class CouponDispenser:
 
         Reminder: Use lists only (no dictionaries).
         """
+    
+
     
         round_no = 1
         run_t_f = True
@@ -135,8 +137,23 @@ class CouponDispenser:
         Returns:
             None
         """
+
+        if len(self.issued_indices) == 0:
+            print("Empty")
+            return
+        
+        for coup in range(len(self.coupon_cards)):
+            count = 0
+
+            for num in self.issued_indices:
+                if num == coup:
+                    count += 1
+
+            print(self.coupon_cards[coup] + " distribution count: " + str(count) + ".")
+        
+
+
         # TODO: Implement per instructions
-        pass
 
 
 def main():
@@ -155,10 +172,10 @@ def main():
     ]
 
     # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
-    # box.distribute_session()
-    # box.tally_distribution()
-    pass
+    box = CouponDispenser(coupon_cards)
+    box.distribute_session()
+    box.tally_distribution()
+
 
 
 # -----------------------
